@@ -34,7 +34,7 @@ class database {
         }
     }
 
-    function getOne($guery) {
+    function getOne($query) {
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
