@@ -1,4 +1,7 @@
 <?php
+
+use Dom\Comment;
+
 class Controller {
     public static function StartSite() {
         $arr = News::getLast10News();
@@ -27,5 +30,25 @@ class Controller {
 
     public static function error404() {
         include_once 'view/error404.php';
+    }
+
+    public static function InsertComment($c, $id) {
+        Comments::InsertComment ($c, $id);
+        header('Location:news?id='.$id.'#ctable');
+    }
+
+    public static function Comments ($newsid) {
+        $arr = Comments::getCommentsByNewsID ($newsid);
+        ViewComments::CommentsBYNews($arr);
+    }
+
+    public static function CommentsCount($newsid) {
+        $arr = Comments::getCommentsCountByNewsID($newsid);
+        ViewComments::CommentsCount($arr);
+    }
+
+    public static function CommentsCountWithAncor ($newsid) {
+        $arr = Comments::getCommentsCountByNewsID($newsid);
+        ViewComments::CommentsCountWithAncor($arr);
     }
 }
