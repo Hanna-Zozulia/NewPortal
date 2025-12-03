@@ -21,6 +21,7 @@
             </li>
             <li><a href="testError">Info</a></li>
             <li><a href="./">Srardileht</a></li>
+            <li> <a href="registerFrom">Register</a></li>
         </ul>
     </nav>
 
