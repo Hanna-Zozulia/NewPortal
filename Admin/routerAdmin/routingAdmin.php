@@ -12,6 +12,9 @@ if ($path == '' OR $path == 'index.php') {
 } elseif ($path == 'logout') {
     $response = controllerAdmin::logoutAction();
 
+} elseif ($path == 'newsAdmin') {
+    $response = controllerAdminNews::NewsList();
+
 } else {
     $response = controllerAdmin::error404();
 }
