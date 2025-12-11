@@ -1,6 +1,6 @@
 <?php
 class Register {
-    public function registerUser() {
+    public static function registerUser() {
         $controll = array(0=>false, 1=>'error');
         if(isset($_POST['save'])) {
             $errorString = "";
@@ -21,7 +21,7 @@ class Register {
                 $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $date = Date("Y-m-d");
 
-                $sql = "INSERT INTO `user` (`id`, `name`, `email`, `password`, `status`, `registration_date`, `pass`) VALUE (NULL, '$name', '$email', '$passwordHash', 'user', '$date', '$password')";
+                $sql = "INSERT INTO `user` (`id`, `name`, `email`, `password`, `status`, `registration_date`, `pass`) VALUES (NULL, '$name', '$email', '$passwordHash', 'user', '$date', '$password')";
                 $db = new Database();
                 $item = $db->executeRun($sql);
                     if ($item) {

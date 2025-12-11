@@ -1,7 +1,5 @@
 <?php
 
-use Dom\Comment;
-
 class Controller {
     public static function StartSite() {
         $arr = News::getLast10News();
@@ -52,11 +50,11 @@ class Controller {
         ViewComments::CommentsCountWithAncor($arr);
     }
 
-    public function registerForm() {
+    public static function registerForm() {
         include_once('view/formRegister.php');
     }
 
-    public function registerUser() {
+    public static function registerUser() {
         $result = Register::registerUser();
         include_once('view/answerRegister.php');
     }
