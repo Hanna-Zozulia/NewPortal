@@ -22,13 +22,49 @@ class modelAdminNews {
                 $text = $_POST['text'];
                 $idCategory = $_POST['idCategory'];
 
-                // $image = addslashes(file_get_contents($_FILES['picture'] ['tmp_name']));
-                $image = null;
-                if(isset($_FILES['picture']) && $_FILES['picture']['error'] === UPLOAD_ERR_OK) {
-                    $image = file_get_contents($_FILES['picture']['tmp_name']);
-                }
+                $image = addslashes(file_get_contents($_FILES['picture'] ['tmp_name']));
+                // $image = null;
+                // if(isset($_FILES['picture']) && $_FILES['picture']['error'] === UPLOAD_ERR_OK) {
+                //     $image = file_get_contents($_FILES['picture']['tmp_name']);
+                // }
 
                 $sql = "INSERT INTO `new` (`id`, `title` , `text`, `picture`, `category_id`, `user_id`) VALUES (NULL, '$title', ' $text', '$image', '$idCategory', '1')";
+                $db = new Database();
+                $item = $db->executeRun($sql);
+                if($item == true) {
+                    $test = true;
+                }
+            }
+        }
+        return $test;
+    }
+
+    public static function getNewsDetail($id) {
+        $query = "SELECT new.*, category.name, user.name FROM new, category, user WHERE new.category_id=category.id AND new.user_id= user.id AND new.id=".$id;
+        $db = new Database();
+        $arr = $db->getOne($query);
+        return $arr;
+    }
+
+    public static function getNewsEdit($id) {
+        $test = false;
+        if(isset($_POST['save'])) {
+            if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])) {
+                $title = $_POST['title'];
+                $text = $_POST['text'];
+                $idCategory = $_POST['idCategory'];
+                $image = $_FILES['picture']['name'];
+                if($image != "") {
+                    $image = addslashes(file_get_contents($_FILES['picture'] ['tmp_name']));
+                }
+
+                if($image == "") {
+                    $sql = "UPDATE `new` SET `title` = '$title', `text` = '$text', `catedory_id` = '$idCategory' WHERE `new`.`id` = ".$id;
+
+                } else {
+                    $sql = "UPDATE `new` SET `title` = '$title', `text` = '$text', `picture` = '$image', `catedory_id` = '$idCategory' WHERE `new`.`id` = ".$id;
+                }
+
                 $db = new Database();
                 $item = $db->executeRun($sql);
                 if($item == true) {
