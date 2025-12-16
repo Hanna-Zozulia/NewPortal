@@ -1,7 +1,17 @@
 <?php
     ob_start();
 ?>
-<h1>Uudised (kategoorii)</h1>
+<?php
+$categoryName = '';
+foreach ($cat as $c) {
+    if ($c['id'] == $arr[0]['category_id']) {
+        $categoryName = $c['name'];
+        break;
+    }
+}
+?>
+<h1>Новости "<?= htmlspecialchars($categoryName) ?>"</h1>
+
 <br>
 
 <?php
