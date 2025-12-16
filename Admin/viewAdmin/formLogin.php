@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <form class="form-signin" action="login" method="POST">
-            <h3 class="form-signin-heading">Ведите ваши данные</h3>
+            <h3 class="form-signin-heading">Введите ваши данные</h3>
             <input type="text" name="email" class="form-control" placeholder="Email" autofocus />
             <input type="password" name="password" class="form-control" placeholder="Пароль" autofocus />
         <button data-mdb-ripple-init type="submit" class="btn btn-lg btn-primary btn-block" name="btnLogin">Войти</button>
@@ -29,7 +29,7 @@
                 }
             ?>
         </p>
-        <p style="padding-top: 10px;"><a href="../">Web site</a></p>
+        <p style="padding-top: 10px;"><a href="../">Веб-сайт</a></p>
         </form>
     </div>
 </body>

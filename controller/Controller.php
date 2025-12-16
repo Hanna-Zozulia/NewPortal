@@ -18,6 +18,7 @@ class Controller {
 
     public static function NewsByCatID($id) {
         $arr = News::getNewsByCategoryID($id);
+        $cat = Category::getAllCategory();
         include_once 'view/catnews.php';
     }
 

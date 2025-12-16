@@ -12,16 +12,16 @@
 <body>
     <nav class="one">
         <ul class="topmenu">
-            <li><a href="#">Kategooriad<i class="fa fa-angle-down"></i></a>
+            <li><a href="#">Категории<i class="fa fa-angle-down"></i></a>
                 <ul class="submenu">
                     <?php
                         Controller::AllCategory();
                     ?>
                 </ul>
             </li>
-            <li><a href="testError">Info</a></li>
-            <li><a href="./">Srardileht</a></li>
-            <li><a href="registerForm">Register</a></li>
+            <li><a href="testError">Инфо</a></li>
+            <li><a href="./">Главная страница</a></li>
+            <li><a href="registerForm">Регистрация</a></li>
         </ul>
     </nav>
 

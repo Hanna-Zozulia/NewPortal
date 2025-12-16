@@ -28,7 +28,7 @@ class modelAdminNews {
                 //     $image = file_get_contents($_FILES['picture']['tmp_name']);
                 // }
 
-                $sql = "INSERT INTO `new` (`id`, `title` , `text`, `picture`, `category_id`, `user_id`) VALUES (NULL, '$title', ' $text', '$image', '$idCategory', '1')";
+                $sql = "INSERT INTO `new` (`id`, `title` , `text`, `picture`, `category_id`, `user_id`) VALUES (NULL, '$title', '$text', '$image', '$idCategory', '1')";
                 $db = new Database();
                 $item = $db->executeRun($sql);
                 if($item == true) {
@@ -78,7 +78,7 @@ class modelAdminNews {
     public static function getNewsDelete($id) {
         $test = false;
         if (isset($_POST['save'])) {
-            $sql = "DELETE FROM `new` EHERE `new`.`id` = ".$id;
+            $sql = "DELETE FROM `new` WHERE `new`.`id` = ".$id;
             $db = new Database();
             $item = $db->executeRun($sql);
             if($item == true) {

@@ -3,7 +3,7 @@
 <div class="conteiner" style="min-height: 400px;">
     <div class="col-md-11">
 
-    <h2>News add</h2>
+    <h2>Добавление новости</h2>
 
     <?php
         if(isset($test)) {
@@ -30,15 +30,15 @@
     <form action="newsAddResult" method="POST" enctype="multipart/form-data">
         <table class="table table-bordered">
             <tr>
-                <td>News title</td>
+                <td>Заголовок новости</td>
                 <td><input type="text" name="title" class="form-control" required></td>
             </tr>
             <tr>
-                <td>News text</td>
-                <td><textarea name="text" rows="5" class="form-control" required></textarea> </td>
+                <td>Новостной текст</td>
+                <td><textarea name="text" rows="5" class="form-control" required></textarea></td>
             </tr>
             <tr>
-                <td>Category</td>
+                <td>Категория</td>
                 <td>
                     <select name="idCategory" class="form-control">
                         <?php
@@ -50,7 +50,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Picture</td>
+                <td>Картинка</td>
                 <td><div>
                     <input type="file" name="picture" style="color:black;">
                 </div></td>

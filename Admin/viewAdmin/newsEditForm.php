@@ -3,7 +3,7 @@
 <div class="conteiner" style="min-height: 400px;">
     <div class="col-md-11">
 
-    <h2>News edit</h2>
+    <h2>Редактирование новости</h2>
 
     <?php
         if(isset($test)) {
@@ -30,15 +30,15 @@
     <form action="newsEditResult?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
         <table class="table table-bordered">
             <tr>
-                <td>News title</td>
+                <td>Заголовок новости</td>
                 <td><input type="text" name="title" class="form-control" required value="<?php echo $detail['title']; ?>"></td>
             </tr>
             <tr>
-                <td>News text</td>
+                <td>Новостной текст</td>
                 <td><textarea name="text" rows="5" class="form-control" required><?php echo $detail['text']; ?></textarea> </td>
             </tr>
             <tr>
-                <td>Category</td>
+                <td>Категория</td>
                 <td>
                     <select name="idCategory" class="form-control">
                         <?php
@@ -51,12 +51,12 @@
                     </select>
                 </td>
             </tr>
-            <td>Old Picture</td>
+            <td>Старая картинка</td>
             <td><div>
-                <?php echo '<img src="data"img/>jpg;base64, '.base64_encode($detail['picture']).'" width = 150 />'; ?>
+                <?php echo '<img src="data:img/jpeg;base64,'.base64_encode($detail['picture']).'" width = 150 />'; ?>
             </div></td>
             <tr>
-                <td>Picture</td>
+                <td>Картинка</td>
                 <td><div>
                     <input type=file name="picture" style="color:black;">
                 </div></td>
