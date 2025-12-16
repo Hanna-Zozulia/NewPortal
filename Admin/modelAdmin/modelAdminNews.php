@@ -59,10 +59,10 @@ class modelAdminNews {
                 }
 
                 if($image == "") {
-                    $sql = "UPDATE `new` SET `title` = '$title', `text` = '$text', `catedory_id` = '$idCategory' WHERE `new`.`id` = ".$id;
+                    $sql = "UPDATE `new` SET `title` = '$title', `text` = '$text', `category_id` = '$idCategory' WHERE `new`.`id` = ".$id;
 
                 } else {
-                    $sql = "UPDATE `new` SET `title` = '$title', `text` = '$text', `picture` = '$image', `catedory_id` = '$idCategory' WHERE `new`.`id` = ".$id;
+                    $sql = "UPDATE `new` SET `title` = '$title', `text` = '$text', `picture` = '$image', `category_id` = '$idCategory' WHERE `new`.`id` = ".$id;
                 }
 
                 $db = new Database();
@@ -70,6 +70,19 @@ class modelAdminNews {
                 if($item == true) {
                     $test = true;
                 }
+            }
+        }
+        return $test;
+    }
+
+    public static function getNewsDelete($id) {
+        $test = false;
+        if (isset($_POST['save'])) {
+            $sql = "DELETE FROM `new` EHERE `new`.`id` = ".$id;
+            $db = new Database();
+            $item = $db->executeRun($sql);
+            if($item == true) {
+                $test = true;
             }
         }
         return $test;
