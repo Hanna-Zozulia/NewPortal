@@ -22,13 +22,12 @@ class modelAdminNews {
                 $text = $_POST['text'];
                 $idCategory = $_POST['idCategory'];
 
-                $image = addslashes(file_get_contents($_FILES['picture'] ['tmp_name']));
-                // $image = null;
-                // if(isset($_FILES['picture']) && $_FILES['picture']['error'] === UPLOAD_ERR_OK) {
-                //     $image = file_get_contents($_FILES['picture']['tmp_name']);
-                // }
+                if (!isset($_FILES['picture']) || $_FILES['picture']['error'] !== UPLOAD_ERR_OK) {
+                    return false;
+                }
 
-                $sql = "INSERT INTO `new` (`id`, `title` , `text`, `picture`, `category_id`, `user_id`) VALUES (NULL, '$title', '$text', '$image', '$idCategory', '1')";
+                $image = addslashes(file_get_contents($_FILES['picture'] ['tmp_name']));
+                $sql = "INSERT INTO `new` (`id`, `title`, `text`, `picture`, `category_id`, `user_id`) VALUES (NULL, '$title', '$text', '$image', '$idCategory', '1')";
                 $db = new Database();
                 $item = $db->executeRun($sql);
                 if($item == true) {

@@ -52,7 +52,7 @@
             <tr>
                 <td>Картинка</td>
                 <td><div>
-                    <input type="file" name="picture" style="color:black;">
+                    <input type="file" name="picture" style="color:black;" required>
                 </div></td>
             </tr>
             <tr>
