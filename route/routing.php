@@ -16,7 +16,7 @@ if($path == '' OR $path == 'index' OR $path == 'index.php') {
 } elseif ($path == 'new' and isset($_GET['id'])) {
     $response = Controller::NewsByID($_GET['id']);
 
-} elseif ($path == 'insertcomment' and isset ($_GET['comment'], $_GET['id'])) {
+} elseif ($path == 'insertcomment' and isset($_GET['comment'], $_GET['id'])) {
     $response = Controller::InsertComment($_GET['comment'], $_GET['id']);
 
 } elseif ($path == 'registerForm') {

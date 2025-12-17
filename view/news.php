@@ -20,10 +20,9 @@ class ViewNews {
     public static function ReadNews($n) {
         echo "<h2>".$n['title']."</h2>";
         Controller::CommentsCountWithAncor($n['id']);
-        echo '<img src="data:image/jpeg;base64,'.base64_encode($n['picture']). '" width="150" /><br>';
+        echo '<br><img src="data:image/jpeg;base64,'.base64_encode($n['picture']).'" width="150" /><br>';
         echo "<p>".$n['text']."</p>";
     }
 
-//добавить методы для других видов представлений новостей
 }
 ?>

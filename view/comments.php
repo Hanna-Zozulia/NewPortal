@@ -2,13 +2,13 @@
 class ViewComments {
     public static function CommentsForm() {
         echo '<form action="insertcomment">
-                <input type="hidden" name="id" value=" '.$_GET['id'].'">
+                <input type="hidden" name="id" value="'.$_GET['id'].'">
                 Ваши коментарии: <input type="text" name="comment">
                 <input type="submit" value="Отправить">
             </form>';
     }
 
-    public static function CommentsBYNews($arr) {
+    public static function CommentsByNews($arr) {
         if($arr!=null) {
             echo '<table id="ctable"><th>Коментарии</th><th>Дата</th>';
             foreach($arr as $value) {
@@ -20,7 +20,7 @@ class ViewComments {
 
     public static function CommentsCountWithAncor($value) {
         if ($value['count']>0)
-            echo '<b><a href="#ctable"/> ('.$value['count'].')</a></b>';
+            echo '<b><a href="#ctable"/>('.$value['count'].')</a></b>';
     }
 
     public static function CommentsCount($value) {

@@ -32,13 +32,13 @@ class Controller {
     }
 
     public static function InsertComment($c, $id) {
-        Comments::InsertComment ($c, $id);
-        header('Location:news?id='.$id.'#ctable');
+        Comments::InsertComment($c, $id);
+        header('Location:new?id='.$id.'#ctable');
     }
 
-    public static function Comments ($newsid) {
-        $arr = Comments::getCommentsByNewsID ($newsid);
-        ViewComments::CommentsBYNews($arr);
+    public static function Comments($newsid) {
+        $arr = Comments::getCommentByNewsID($newsid);
+        ViewComments::CommentsByNews($arr);
     }
 
     public static function CommentsCount($newsid) {
@@ -46,7 +46,7 @@ class Controller {
         ViewComments::CommentsCount($arr);
     }
 
-    public static function CommentsCountWithAncor ($newsid) {
+    public static function CommentsCountWithAncor($newsid) {
         $arr = Comments::getCommentsCountByNewsID($newsid);
         ViewComments::CommentsCountWithAncor($arr);
     }

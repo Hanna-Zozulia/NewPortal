@@ -15,14 +15,14 @@ class News {
     }
 
     public static function getNewsByCategoryID($id) {
-        $query = "SELECT * FROM `new` where category_id=".(string)$id." ORDER BY id DESC;";
+        $query = "SELECT * FROM `new` WHERE category_id=".(string)$id." ORDER BY id DESC;";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
 
     public static function getNewsByID($id) {
-        $query = "SELECT * FROM new where id=".(string)$id;
+        $query = "SELECT * FROM `new` WHERE id=".(string)$id;
         $db = new Database();
         $n = $db->getOne($query);
         return $n;

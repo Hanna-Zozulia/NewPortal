@@ -45,7 +45,7 @@
                 <?php echo $content; ?>
             </div>
             <footer class="footer">
-                <p>&copy; 2025 Design Admin dashboard <i class="fa fa-child"></i></p>
+                <p>&copy; 2025 Design Admin dashboard</p>
             </footer>
         </div>
     </body>

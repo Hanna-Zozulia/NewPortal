@@ -81,7 +81,7 @@ a {
 }
 
 .one ul a:hover {
-  color: gold;
+  color: #ffd700;
   transition: 0.3s;
   text-decoration: underline;
 }
